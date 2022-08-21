@@ -59,9 +59,9 @@ const renderCountries = country => {
 const renderCountryInfo = country => {
   const result = country
     .map(({ name, capital, population, flags, languages }) => {
-      return `><div><img src="${flags.svg}" alt="${
+      return `<div><img src="${flags.svg}" alt="${
         name.official
-      }" width="30"> <h1>${name.official}</h1>
+      }" width="70"> <h1>${name.official}</h1>
       <p><b>Capital:</b>  ${capital}</p>
       <p><b>Population:</b> ${population}</p>
       <p><b>Languages:</b> ${Object.values(languages)}</p></div>`;
