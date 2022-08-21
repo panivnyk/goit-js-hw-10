@@ -28,10 +28,11 @@ const searchCountry = event => {
         countryList.innerHTML = '';
         return;
       } else if (country.length === 1) {
+        countryInfo.innerHTML = '';
         countryList.innerHTML = '';
         renderCountryInfo(country);
       } else if (country.length > 1 && country.length <= 10) {
-        countryInfo.innerHTML = '';
+        countryList.innerHTML = '';
         renderCountries(country);
       }
     })
@@ -59,9 +60,9 @@ const renderCountries = country => {
 const renderCountryInfo = country => {
   const result = country
     .map(({ name, capital, population, flags, languages }) => {
-      return `<div><img src="${flags.svg}" alt="${
+      return `<h1><div><img src="${flags.svg}" alt="${
         name.official
-      }" width="70"> <h1>${name.official}</h1>
+      }" width="30"> ${name.official}</h1>
       <p><b>Capital:</b>  ${capital}</p>
       <p><b>Population:</b> ${population}</p>
       <p><b>Languages:</b> ${Object.values(languages)}</p></div>`;
